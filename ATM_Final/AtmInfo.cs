@@ -7,8 +7,7 @@ namespace ATM
 {
     internal class AtmInfo
     {
-        
-           private List<Card>cards = new List<Card>();
+        private List<Card> cards = new List<Card>();
 
         public bool CreateCard(string number,
                                string pin,
@@ -19,19 +18,19 @@ namespace ATM
             {
                 throw new ArgumentException("this card already exists");
             }
-            
+
             cards.Add(new Card(number, pin, balance));
-              
+
             return true;
         }
 
         //card autorization
 
-        public Card AuthCard(string number,string pin)
+        public Card AuthCard(string number, string pin)
         {
             foreach (var c in cards)
             {
-                if(c.Number == number && c.Pin == pin)
+                if (c.Number == number && c.Pin == pin)
                 {
                     return c;
                 }
@@ -53,13 +52,13 @@ namespace ATM
                     Console.Write("*");
 
                 }
-            } 
+            }
             while (key.Key != ConsoleKey.Enter);
             Console.WriteLine();
             return input;
-         }
+        }
 
 
 
-    }   
+    }
 }
