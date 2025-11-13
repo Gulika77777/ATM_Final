@@ -1,13 +1,11 @@
-﻿
+﻿using ATM_Final.Cards.cs;
+using System.Xml.Serialization;
 
-using ATM_Final.Cards.cs;
-using System.Threading.Channels;
-
-namespace ATM
+namespace ATM_Final.AtmInfos.cs
 {
     internal class AtmInfo
     {
-        private List<Card> cards = new List<Card>();
+        private List<Card> cards = [];
 
         public bool CreateCard(string number,
                                string pin,
@@ -21,8 +19,17 @@ namespace ATM
 
             cards.Add(new Card(number, pin, balance));
 
+            
+            XmlSerializer serializer = new (typeof(List<Card>));
+
+            using (FileStream fs = new FileStream("cards.xml", FileMode.Create))
+            {
+                serializer.Serialize(fs, cards);
+            }
             return true;
         }
+
+
 
         //card autorization
 

@@ -1,9 +1,10 @@
 ﻿namespace ATM_Final.Cards.cs
 {
-    internal class Card
+    public class Card
     {
         private string _pin2;
         private string _number2;
+
         public string Number
         {
             get
@@ -39,7 +40,7 @@
 
         public decimal Balance { get; set; }
 
-        public Card() { }
+     
 
         public Card
             (
