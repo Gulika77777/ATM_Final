@@ -4,12 +4,7 @@ using ATM_Final.AtmInfos.cs;
 using ATM_Final.Cards.cs;
 using System;
 
-namespace ATM
-{
-    internal class Program
-    {
-        static void Main(string[] args)
-        {
+
             AtmInfo atm = new AtmInfo();
             Card? currentCard = null;
 
@@ -121,5 +116,3 @@ namespace ATM
                 Console.ReadKey();
             }
         }
-    }
-}
