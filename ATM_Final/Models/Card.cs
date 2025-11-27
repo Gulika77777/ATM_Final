@@ -40,7 +40,10 @@
 
         public decimal Balance { get; set; }
 
-     
+        public Card()
+        {
+                
+        }
 
         public Card
             (

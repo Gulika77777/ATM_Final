@@ -19,13 +19,16 @@ namespace ATM_Final.AtmInfos.cs
 
             cards.Add(new Card(number, pin, balance));
 
+            string projectDirectory = Directory.GetParent(Environment.CurrentDirectory).Parent.Parent.FullName;
+
+            string path = Path.Combine( projectDirectory,"Data","AtmXml");
             
             XmlSerializer serializer = new (typeof(List<Card>));
 
-            using (FileStream fs = new FileStream("cards.xml", FileMode.Create))
+            using (FileStream fs = new FileStream(path, FileMode.Create))
             {
                 serializer.Serialize(fs, cards);
-            }
+            }  
             return true;
         }
 
