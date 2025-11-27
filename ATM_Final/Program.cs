@@ -5,7 +5,7 @@ using ATM_Final.Cards.cs;
 using System;
 
 
-            AtmInfo atm = new AtmInfo();
+            AtmInfo atm = [];
             Card? currentCard = null;
 
             while (true)
